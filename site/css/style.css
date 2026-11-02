@@ -168,9 +168,26 @@ h3 { font-size: 1.15rem; color: var(--orange); }
   overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin;
 }
 .carrousel-piste li { scroll-snap-align: start; }
-.carrousel-piste figure { margin: 0; }
-.carrousel-piste img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.carrousel-piste figcaption { padding: 10px 2px 0; font-size: .95rem; }
+.carrousel-piste figure { margin: 0; position: relative; overflow: hidden; }
+.carrousel-piste img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .4s; }
+.carrousel-piste figcaption {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-end;
+  padding: 20px; font-size: .95rem; line-height: 1.45; color: var(--blanc);
+  background: linear-gradient(to top, rgba(20,20,20,.85), rgba(20,20,20,.35) 60%, rgba(20,20,20,.1));
+  opacity: 0; transition: opacity .3s;
+}
+.carrousel-piste figure:hover figcaption,
+.carrousel-piste figure:focus-within figcaption { opacity: 1; }
+.carrousel-piste figure:hover img { transform: scale(1.04); }
+
+/* Sur téléphone et tablette (pas de souris) : description toujours visible sous la photo */
+@media (hover: none) {
+  .carrousel-piste figcaption {
+    position: static; opacity: 1; background: none; color: var(--noir);
+    padding: 10px 2px 0;
+  }
+}
 .carrousel-fleche {
   position: absolute; top: calc(50% - 40px); z-index: 2;
   width: 44px; height: 44px; border-radius: 50%; border: 0;

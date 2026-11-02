@@ -89,7 +89,7 @@ def construire():
         for p in contenu["prestations"]["liste"]
     )
     realisations = "\n          ".join(
-        f'<li><figure><img src="{escape(r["image"])}" alt="{escape(r["titre"])}" loading="lazy">'
+        f'<li><figure tabindex="0"><img src="{escape(r["image"])}" alt="{escape(r["titre"])}" loading="lazy">'
         f'<figcaption>{escape(r["titre"])}</figcaption></figure></li>'
         for r in contenu["realisations"]["liste"]
     )
