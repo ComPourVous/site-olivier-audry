@@ -107,9 +107,11 @@
     <div class="conteneur conteneur-etroit">
       <h2>{{contact.titre}}</h2>
       <p class="contact-intro">{{contact.texte}}</p>
-      <form name="contact" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="champ-piege" class="formulaire">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="cache"><label>Ne pas remplir : <input name="champ-piege"></label></p>
+      <form method="POST" action="https://formsubmit.co/{{contact.email_formulaire}}" class="formulaire">
+        <input type="hidden" name="_subject" value="Nouvelle demande depuis le site olivier-audry.fr">
+        <input type="hidden" name="_next" value="https://olivier-audry.fr/merci.html">
+        <input type="hidden" name="_template" value="table">
+        <p class="cache"><label>Ne pas remplir : <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
         <div class="champs-2">
           <label>Nom *<input type="text" name="nom" required autocomplete="family-name"></label>
           <label>Prénom *<input type="text" name="prenom" required autocomplete="given-name"></label>

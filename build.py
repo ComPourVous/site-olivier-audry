@@ -125,7 +125,8 @@ def construire():
     <p>Netlify, Inc. – San Francisco, Californie, États-Unis – www.netlify.com</p>
     <h2>Données personnelles</h2>
     <p>Les informations envoyées via le formulaire de contact servent uniquement à répondre à votre demande.
-    Elles ne sont ni revendues ni transmises à des tiers. Vous pouvez demander leur suppression à tout moment
+    Elles sont acheminées par e-mail via le service FormSubmit (formsubmit.co), puis ne sont ni revendues
+    ni transmises à d'autres tiers. Vous pouvez demander leur suppression à tout moment
     en écrivant à l'adresse ci-dessus.</p>
     <h2>Création du site</h2>
     <p>Com' Pour Vous – contact@com-pour-vous.fr</p>""",
