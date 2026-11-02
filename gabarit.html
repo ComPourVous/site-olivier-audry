@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{seo.titre}}</title>
+  <meta name="description" content="{{seo.description}}">
+  <meta property="og:title" content="{{seo.titre}}">
+  <meta property="og:description" content="{{seo.description}}">
+  <meta property="og:image" content="{{accueil.image}}">
+  <link rel="icon" href="/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="entete">
+  <div class="conteneur entete-inner">
+    <a href="#accueil" class="logo"><img src="/images/logo.png" alt="O. Audry – Couverture Zinguerie" width="160" height="78"></a>
+    <button class="menu-bouton" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" class="menu">
+      <a href="#accueil">Accueil</a>
+      <a href="#realisations">Nos réalisations</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="bouton bouton-contour">Devis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="accueil" class="hero" style="--hero-image: url('{{accueil.image}}')">
+    <div class="conteneur hero-contenu">
+      <h1>{{accueil.titre}} <span class="orange">{{accueil.titre_couleur}}</span></h1>
+      <p class="hero-sous-titre">{{accueil.sous_titre}}</p>
+      <a href="#realisations" class="bouton">{{accueil.bouton}}</a>
+    </div>
+  </section>
+
+  <section class="section qui">
+    <div class="conteneur">
+      <h2>{{qui_sommes_nous.titre}}</h2>
+      <div class="qui-texte">
+        {{QUI_PARAGRAPHES}}
+      </div>
+      <a href="#contact" class="bouton">{{qui_sommes_nous.bouton}}</a>
+      <div class="qui-photos">
+        <img src="{{qui_sommes_nous.image_1}}" alt="Toiture rénovée par O. Audry" loading="lazy">
+        <img src="{{qui_sommes_nous.image_2}}" alt="Couverture en tuiles réalisée par O. Audry" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <div class="bandeau">{{BANDEAU_1}}</div>
+
+  <section class="section entreprise">
+    <div class="conteneur entreprise-grille">
+      <div class="entreprise-texte">
+        <h2>{{entreprise.titre}} <span class="orange">{{entreprise.titre_couleur}}</span></h2>
+        {{ENTREPRISE_PARAGRAPHES}}
+      </div>
+      <div class="entreprise-visuel">
+        <img src="{{entreprise.image}}" alt="Charpente bois" loading="lazy">
+        <div class="chiffre">
+          <strong>{{entreprise.chiffre}}</strong>
+          <span>{{entreprise.chiffre_texte}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="conteneur">
+      <div class="engagement">
+        <strong>{{entreprise.engagement_titre}}</strong>
+        <p>{{entreprise.engagement_texte}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="prestations" class="section prestations">
+    <div class="conteneur">
+      <h2>{{prestations.titre}}</h2>
+      <ul class="prestations-grille">
+        {{PRESTATIONS}}
+      </ul>
+    </div>
+  </section>
+
+  <section id="realisations" class="section realisations">
+    <div class="conteneur">
+      <h2>{{realisations.titre}}</h2>
+      <div class="carrousel">
+        <button class="carrousel-fleche precedent" aria-label="Réalisation précédente">‹</button>
+        <ul class="carrousel-piste">
+          {{REALISATIONS}}
+        </ul>
+        <button class="carrousel-fleche suivant" aria-label="Réalisation suivante">›</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="bandeau">{{BANDEAU_2}}</div>
+
+  <section id="contact" class="section contact">
+    <div class="conteneur conteneur-etroit">
+      <h2>{{contact.titre}}</h2>
+      <p class="contact-intro">{{contact.texte}}</p>
+      <form name="contact" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="champ-piege" class="formulaire">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="cache"><label>Ne pas remplir : <input name="champ-piege"></label></p>
+        <div class="champs-2">
+          <label>Nom *<input type="text" name="nom" required autocomplete="family-name"></label>
+          <label>Prénom *<input type="text" name="prenom" required autocomplete="given-name"></label>
+        </div>
+        <div class="champs-2">
+          <label>Téléphone *<input type="tel" name="telephone" required autocomplete="tel"></label>
+          <label>Email *<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label>Sujet *<input type="text" name="sujet" required></label>
+        <label>Message *<textarea name="message" rows="5" required></textarea></label>
+        <button type="submit" class="bouton">Envoyer</button>
+      </form>
+      <p class="contact-direct">
+        <a href="mailto:{{contact.email}}">{{contact.email}}</a>{{TELEPHONE}}
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur pied-inner">
+    <p>© {{societe.annee}} O. Audry. Tous droits réservés.</p>
+    <a href="/mentions-legales.html">Mentions légales</a>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

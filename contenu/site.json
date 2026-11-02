@@ -1,0 +1,88 @@
+{
+  "seo": {
+    "titre": "O. Audry – Couverture et zinguerie à Veaugues (18)",
+    "description": "SAS O. Audry, couvreur-zingueur à Veaugues depuis plus de 10 ans : couverture neuve et rénovation, zinguerie, réparation, entretien de toiture. Devis gratuit."
+  },
+  "accueil": {
+    "titre": "Une expertise de proximité dédiée à",
+    "titre_couleur": "votre couverture.",
+    "sous_titre": "Couverture • Zinguerie • Réparation • Neuf • Rénovation",
+    "bouton": "Découvrir nos réalisations",
+    "image": "/images/hero-maison.jpg"
+  },
+  "qui_sommes_nous": {
+    "titre": "Qui sommes-nous ?",
+    "paragraphes": [
+      "La SAS O. AUDRY est une entreprise spécialisée dans les travaux de couverture et de zinguerie, installée à Veaugues depuis plus de 10 ans.",
+      "Forts de notre expérience et de notre savoir-faire, nous intervenons aussi bien sur des constructions neuves que sur des projets de rénovation ou de réparation.",
+      "Nous accompagnons particuliers et professionnels dans leurs différents projets, de l’étude des besoins jusqu’à la réalisation des travaux. Notre objectif : proposer des solutions adaptées à chaque bâtiment, tout en veillant à la qualité des finitions et au respect des contraintes de chaque chantier.",
+      "Que ce soit pour la création, la rénovation ou l’entretien d’une toiture, nous mettons notre expertise au service de projets durables et réalisés dans les règles de l’art."
+    ],
+    "bouton": "Demander un devis",
+    "image_1": "/images/apropos-1.jpg",
+    "image_2": "/images/apropos-2.jpg"
+  },
+  "bandeau_1": "Couverture • Zinguerie • Réparation • Neuf • Rénovation",
+  "entreprise": {
+    "titre": "Une entreprise de couverture ancrée",
+    "titre_couleur": "dans le territoire",
+    "paragraphes": [
+      "Nous intervenons auprès des particuliers et des professionnels pour tous types de projets, en neuf, en rénovation ou pour des travaux de réparation et d'entretien.",
+      "Qu'il s'agisse de la rénovation d'une toiture ancienne, de la réalisation d'une couverture neuve, du remplacement d'éléments de toiture ou de travaux de zinguerie, nous mettons notre expérience et notre savoir-faire au service de chaque chantier.",
+      "Attachés à notre implantation locale et à la qualité de notre travail, nous privilégions une relation de proximité avec nos clients, de l'étude du projet jusqu'à sa réalisation."
+    ],
+    "image": "/images/charpente.jpg",
+    "chiffre": "+10",
+    "chiffre_texte": "ans d'implantation à Veaugues",
+    "engagement_titre": "Notre engagement :",
+    "engagement_texte": "Réaliser un travail sérieux, soigné et durable, dans le respect du bâtiment et des attentes de nos clients."
+  },
+  "prestations": {
+    "titre": "Nos prestations",
+    "liste": [
+      { "titre": "Couverture neuve et rénovation", "texte": "Pose et remise à neuf de toitures, ardoises et tuiles", "icone": "maison" },
+      { "titre": "Réparation et entretien", "texte": "Interventions ciblées pour prolonger la durée de vie de votre toit", "icone": "outils" },
+      { "titre": "Travaux de zinguerie", "texte": "Chéneaux, noues, habillages sur mesure en zinc", "icone": "cle" },
+      { "titre": "Rénovation de toitures anciennes", "texte": "Restauration respectueuse du bâti d'origine", "icone": "ancien" },
+      { "titre": "Recherche de fuites et étanchéité", "texte": "Diagnostic précis et réparation des infiltrations", "icone": "goutte" },
+      { "titre": "Pose de fenêtres de toit", "texte": "Installation et remplacement pour plus de lumière", "icone": "fenetre" },
+      { "titre": "Travaux d'isolation", "texte": "Isolation sous toiture pour le confort thermique", "icone": "isolation" },
+      { "titre": "Démoussage et nettoyage", "texte": "Entretien de la couverture contre mousse et lichens", "icone": "nettoyage" },
+      { "titre": "Révision annuelle", "texte": "Contrôle préventif de l'état général de la toiture", "icone": "calendrier" },
+      { "titre": "Gouttières", "texte": "Pose et remplacement pour évacuation efficace", "icone": "gouttiere" }
+    ]
+  },
+  "realisations": {
+    "titre": "Quelques réalisations",
+    "liste": [
+      { "titre": "Réalisation d'un bardage bois", "image": "/images/real-01-bardage-bois.jpg" },
+      { "titre": "Rénovation de la charpente et de la couverture de ce vieux moulin", "image": "/images/real-02-vieux-moulin.jpg" },
+      { "titre": "Réfection de la couverture de cet ancien presbytère en tuiles mécaniques", "image": "/images/real-03-presbytere.jpg" },
+      { "titre": "Rénovation de cette toiture en ardoises naturelles", "image": "/images/real-04-ardoises-naturelles.jpg" },
+      { "titre": "Rénovation de la couverture de ce hangar", "image": "/images/real-05-hangar.jpg" },
+      { "titre": "Toiture en petites tuiles de pays et pose de fenêtres de toit", "image": "/images/real-06-tuiles-de-pays-fenetres.jpg" },
+      { "titre": "Rénovation de la charpente et de la couverture de cet ancien moulin", "image": "/images/real-07-ancien-moulin.jpg" },
+      { "titre": "Rénovation de la couverture en tuiles plates de pays", "image": "/images/real-08-tuiles-plates.jpg" },
+      { "titre": "Rénovation de la toiture en tuiles", "image": "/images/real-09-toiture-tuiles.jpg" },
+      { "titre": "Réalisation d'un bardage bois et pose de rives en zinc", "image": "/images/real-10-bardage-rives-zinc.jpg" },
+      { "titre": "Rénovation du toit en ardoises", "image": "/images/real-11-toit-ardoises.jpg" },
+      { "titre": "Toiture en ardoises, fenêtres de toit et souches de cheminée", "image": "/images/real-12-ardoises-fenetres-souches.jpg" },
+      { "titre": "Réalisation de la couverture de cette maison de potiers avec une petite tuile plate en panachage", "image": "/images/real-13-maison-potiers.jpg" }
+    ]
+  },
+  "bandeau_2": "Précision • Durabilité • Authenticité • Esthétique",
+  "contact": {
+    "titre": "Un projet pour nous ?",
+    "texte": "Contactez-nous pour une étude gratuite de votre projet, en neuf comme en rénovation.",
+    "email": "contact@olivier-audry.fr",
+    "telephone": ""
+  },
+  "societe": {
+    "nom": "SASU O. AUDRY",
+    "adresse": "29 Route de Vinon, 18300 Veaugues, France",
+    "siret": "808 145 064 00016",
+    "tva": "FR35808145064",
+    "responsable_publication": "",
+    "annee": "2026"
+  }
+}

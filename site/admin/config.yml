@@ -1,0 +1,124 @@
+# Page d'administration (Decap CMS) : https://<domaine>/admin
+# La connexion (backend) sera branchée au moment de la mise en ligne.
+backend:
+  name: github
+  repo: ComPourVous/site-olivier-audry
+  branch: main
+
+locale: fr
+media_folder: site/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: site
+    label: Site
+    files:
+      - name: contenu
+        label: Contenu du site
+        file: contenu/site.json
+        fields:
+          - label: Référencement Google
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Titre de l'onglet, name: titre, widget: string }
+              - { label: Description pour Google, name: description, widget: text }
+
+          - label: Haut de page
+            name: accueil
+            widget: object
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - { label: Fin du titre (en orange), name: titre_couleur, widget: string }
+              - { label: Sous-titre, name: sous_titre, widget: string }
+              - { label: Texte du bouton, name: bouton, widget: string }
+              - { label: Photo de fond, name: image, widget: image }
+
+          - label: Qui sommes-nous
+            name: qui_sommes_nous
+            widget: object
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - { label: Paragraphes, name: paragraphes, widget: list, field: { label: Paragraphe, name: paragraphe, widget: text } }
+              - { label: Texte du bouton, name: bouton, widget: string }
+              - { label: Photo 1, name: image_1, widget: image }
+              - { label: Photo 2, name: image_2, widget: image }
+
+          - { label: Bandeau orange (1), name: bandeau_1, widget: string }
+
+          - label: L'entreprise
+            name: entreprise
+            widget: object
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - { label: Fin du titre (en orange), name: titre_couleur, widget: string }
+              - { label: Paragraphes, name: paragraphes, widget: list, field: { label: Paragraphe, name: paragraphe, widget: text } }
+              - { label: Photo, name: image, widget: image }
+              - { label: Chiffre, name: chiffre, widget: string }
+              - { label: Texte sous le chiffre, name: chiffre_texte, widget: string }
+              - { label: Titre de l'encadré, name: engagement_titre, widget: string }
+              - { label: Texte de l'encadré, name: engagement_texte, widget: text }
+
+          - label: Prestations
+            name: prestations
+            widget: object
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - label: Liste des prestations
+                name: liste
+                widget: list
+                summary: "{{fields.titre}}"
+                fields:
+                  - { label: Titre, name: titre, widget: string }
+                  - { label: Description, name: texte, widget: string }
+                  - label: Icône
+                    name: icone
+                    widget: select
+                    options:
+                      - { label: Maison, value: maison }
+                      - { label: Outils, value: outils }
+                      - { label: Clé, value: cle }
+                      - { label: Bâtiment ancien, value: ancien }
+                      - { label: Goutte d'eau, value: goutte }
+                      - { label: Fenêtre de toit, value: fenetre }
+                      - { label: Isolation, value: isolation }
+                      - { label: Nettoyage, value: nettoyage }
+                      - { label: Calendrier, value: calendrier }
+                      - { label: Gouttière, value: gouttiere }
+
+          - label: Réalisations
+            name: realisations
+            widget: object
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - label: Photos des chantiers
+                name: liste
+                widget: list
+                summary: "{{fields.titre}}"
+                fields:
+                  - { label: Titre du chantier, name: titre, widget: string }
+                  - { label: Photo, name: image, widget: image }
+
+          - { label: Bandeau orange (2), name: bandeau_2, widget: string }
+
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - { label: Texte, name: texte, widget: text }
+              - { label: Email, name: email, widget: string }
+              - { label: Téléphone (laisser vide pour ne pas l'afficher), name: telephone, widget: string, required: false }
+
+          - label: Informations légales
+            name: societe
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Nom de la société, name: nom, widget: string }
+              - { label: Adresse, name: adresse, widget: string }
+              - { label: SIRET, name: siret, widget: string }
+              - { label: N° TVA, name: tva, widget: string }
+              - { label: Responsable de la publication, name: responsable_publication, widget: string, required: false }
+              - { label: Année du copyright, name: annee, widget: string }
