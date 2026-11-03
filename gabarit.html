@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{seo.titre}}</title>
   <meta name="description" content="{{seo.description}}">
+  <link rel="canonical" href="{{URL}}/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="O. Audry – Couverture Zinguerie">
+  <meta property="og:url" content="{{URL}}/">
   <meta property="og:title" content="{{seo.titre}}">
   <meta property="og:description" content="{{seo.description}}">
-  <meta property="og:image" content="{{accueil.image}}">
+  <meta property="og:image" content="{{URL}}{{accueil.image}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#df5b15">
   <link rel="icon" href="/images/logo.png">
+  <link rel="preload" as="image" href="{{accueil.image}}">
+  <script type="application/ld+json">{{DONNEES_STRUCTUREES}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -35,7 +44,8 @@
 
   <section id="accueil" class="hero" style="--hero-image: url('{{accueil.image}}')">
     <div class="conteneur hero-contenu">
-      <h1>{{accueil.titre}} <span class="orange">{{accueil.titre_couleur}}</span></h1>
+      <h1 class="hero-surtitre">{{accueil.surtitre}}</h1>
+      <p class="hero-titre">{{accueil.titre}} <span class="orange">{{accueil.titre_couleur}}</span></p>
       <p class="hero-sous-titre">{{accueil.sous_titre}}</p>
       <a href="#realisations" class="bouton">{{accueil.bouton}}</a>
     </div>

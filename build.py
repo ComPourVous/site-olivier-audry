@@ -5,11 +5,13 @@ GitHub (fichier .github/workflows/site.yml) lance ce script tout seul à chaque 
 """
 import json
 import re
+from datetime import date
 from html import escape
 from pathlib import Path
 
 RACINE = Path(__file__).parent
 SORTIE = RACINE / "site"
+URL = "https://olivier-audry.fr"
 
 ICONES = {
     "maison": '<path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
@@ -80,6 +82,43 @@ def page_simple(contenu, titre, corps):
 """
 
 
+def donnees_structurees(contenu):
+    """Fiche entreprise lisible par Google (schema.org) : nom, adresse, prestations..."""
+    s = contenu["societe"]
+    rue, cp_ville = [x.strip() for x in s["adresse"].split(",")[:2]]
+    cp, ville = cp_ville.split(" ", 1)
+    fiche = {
+        "@context": "https://schema.org",
+        "@type": "RoofingContractor",
+        "@id": URL + "/#entreprise",
+        "name": "O. Audry – Couverture Zinguerie",
+        "legalName": s["nom"],
+        "description": contenu["seo"]["description"],
+        "url": URL + "/",
+        "logo": URL + "/images/logo.png",
+        "image": URL + contenu["accueil"]["image"],
+        "email": contenu["contact"]["email"],
+        "vatID": s["tva"],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": rue,
+            "postalCode": cp,
+            "addressLocality": ville,
+            "addressRegion": "Centre-Val de Loire",
+            "addressCountry": "FR",
+        },
+        "areaServed": {"@type": "AdministrativeArea", "name": "Cher (18)"},
+        "makesOffer": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": p["titre"], "description": p["texte"]}}
+            for p in contenu["prestations"]["liste"]
+        ],
+    }
+    tel = contenu["contact"].get("telephone", "").strip()
+    if tel:
+        fiche["telephone"] = tel
+    return json.dumps(fiche, ensure_ascii=False, indent=2).replace("</", "<\\/")
+
+
 def construire():
     contenu = json.loads((RACINE / "contenu" / "site.json").read_text(encoding="utf-8"))
     gabarit = (RACINE / "gabarit.html").read_text(encoding="utf-8")
@@ -104,8 +143,18 @@ def construire():
         "TELEPHONE": telephone,
         "BANDEAU_1": bandeau(contenu["bandeau_1"]),
         "BANDEAU_2": bandeau(contenu["bandeau_2"]),
+        "DONNEES_STRUCTUREES": donnees_structurees(contenu),
+        "URL": URL,
     })
     (SORTIE / "index.html").write_text(index, encoding="utf-8")
+
+    (SORTIE / "robots.txt").write_text(
+        f"User-agent: *\nDisallow: /admin/\n\nSitemap: {URL}/sitemap.xml\n", encoding="utf-8")
+    (SORTIE / "sitemap.xml").write_text(f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{URL}/</loc><lastmod>{date.today().isoformat()}</lastmod></url>
+</urlset>
+""", encoding="utf-8")
 
     (SORTIE / "merci.html").write_text(page_simple(
         contenu, "Message envoyé",

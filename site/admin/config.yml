@@ -29,6 +29,7 @@ collections:
             name: accueil
             widget: object
             fields:
+              - { label: "Petite ligne au-dessus du titre (métier + lieu, important pour Google)", name: surtitre, widget: string }
               - { label: Titre, name: titre, widget: string }
               - { label: Fin du titre (en orange), name: titre_couleur, widget: string }
               - { label: Sous-titre, name: sous_titre, widget: string }

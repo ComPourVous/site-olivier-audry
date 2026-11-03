@@ -1,9 +1,10 @@
 {
   "seo": {
-    "titre": "O. Audry – Couverture et zinguerie à Veaugues (18)",
-    "description": "SAS O. Audry, couvreur-zingueur à Veaugues depuis plus de 10 ans : couverture neuve et rénovation, zinguerie, réparation, entretien de toiture. Devis gratuit."
+    "titre": "Couvreur zingueur à Veaugues (18) – O. Audry",
+    "description": "O. Audry, couvreur-zingueur à Veaugues (Cher) depuis plus de 10 ans : couverture neuve et rénovation, zinguerie, réparation et entretien de toiture. Devis gratuit."
   },
   "accueil": {
+    "surtitre": "Couvreur-zingueur à Veaugues, dans le Cher",
     "titre": "Une expertise de proximité dédiée à",
     "titre_couleur": "votre couverture.",
     "sous_titre": "Couverture • Zinguerie • Réparation • Neuf • Rénovation",
@@ -40,34 +41,113 @@
   "prestations": {
     "titre": "Nos prestations",
     "liste": [
-      { "titre": "Couverture neuve et rénovation", "texte": "Pose et remise à neuf de toitures, ardoises et tuiles", "icone": "maison" },
-      { "titre": "Réparation et entretien", "texte": "Interventions ciblées pour prolonger la durée de vie de votre toit", "icone": "outils" },
-      { "titre": "Travaux de zinguerie", "texte": "Chéneaux, noues, habillages sur mesure en zinc", "icone": "cle" },
-      { "titre": "Rénovation de toitures anciennes", "texte": "Restauration respectueuse du bâti d'origine", "icone": "ancien" },
-      { "titre": "Recherche de fuites et étanchéité", "texte": "Diagnostic précis et réparation des infiltrations", "icone": "goutte" },
-      { "titre": "Pose de fenêtres de toit", "texte": "Installation et remplacement pour plus de lumière", "icone": "fenetre" },
-      { "titre": "Travaux d'isolation", "texte": "Isolation sous toiture pour le confort thermique", "icone": "isolation" },
-      { "titre": "Démoussage et nettoyage", "texte": "Entretien de la couverture contre mousse et lichens", "icone": "nettoyage" },
-      { "titre": "Révision annuelle", "texte": "Contrôle préventif de l'état général de la toiture", "icone": "calendrier" },
-      { "titre": "Gouttières", "texte": "Pose et remplacement pour évacuation efficace", "icone": "gouttiere" }
+      {
+        "titre": "Couverture neuve et rénovation",
+        "texte": "Pose et remise à neuf de toitures, ardoises et tuiles",
+        "icone": "maison"
+      },
+      {
+        "titre": "Réparation et entretien",
+        "texte": "Interventions ciblées pour prolonger la durée de vie de votre toit",
+        "icone": "outils"
+      },
+      {
+        "titre": "Travaux de zinguerie",
+        "texte": "Chéneaux, noues, habillages sur mesure en zinc",
+        "icone": "cle"
+      },
+      {
+        "titre": "Rénovation de toitures anciennes",
+        "texte": "Restauration respectueuse du bâti d'origine",
+        "icone": "ancien"
+      },
+      {
+        "titre": "Recherche de fuites et étanchéité",
+        "texte": "Diagnostic précis et réparation des infiltrations",
+        "icone": "goutte"
+      },
+      {
+        "titre": "Pose de fenêtres de toit",
+        "texte": "Installation et remplacement pour plus de lumière",
+        "icone": "fenetre"
+      },
+      {
+        "titre": "Travaux d'isolation",
+        "texte": "Isolation sous toiture pour le confort thermique",
+        "icone": "isolation"
+      },
+      {
+        "titre": "Démoussage et nettoyage",
+        "texte": "Entretien de la couverture contre mousse et lichens",
+        "icone": "nettoyage"
+      },
+      {
+        "titre": "Révision annuelle",
+        "texte": "Contrôle préventif de l'état général de la toiture",
+        "icone": "calendrier"
+      },
+      {
+        "titre": "Gouttières",
+        "texte": "Pose et remplacement pour évacuation efficace",
+        "icone": "gouttiere"
+      }
     ]
   },
   "realisations": {
     "titre": "Quelques réalisations",
     "liste": [
-      { "titre": "Réalisation d'un bardage bois", "image": "/images/real-01-bardage-bois.jpg" },
-      { "titre": "Rénovation de la charpente et de la couverture de ce vieux moulin", "image": "/images/real-02-vieux-moulin.jpg" },
-      { "titre": "Réfection de la couverture de cet ancien presbytère en tuiles mécaniques", "image": "/images/real-03-presbytere.jpg" },
-      { "titre": "Rénovation de cette toiture en ardoises naturelles", "image": "/images/real-04-ardoises-naturelles.jpg" },
-      { "titre": "Rénovation de la couverture de ce hangar", "image": "/images/real-05-hangar.jpg" },
-      { "titre": "Toiture en petites tuiles de pays et pose de fenêtres de toit", "image": "/images/real-06-tuiles-de-pays-fenetres.jpg" },
-      { "titre": "Rénovation de la charpente et de la couverture de cet ancien moulin", "image": "/images/real-07-ancien-moulin.jpg" },
-      { "titre": "Rénovation de la couverture en tuiles plates de pays", "image": "/images/real-08-tuiles-plates.jpg" },
-      { "titre": "Rénovation de la toiture en tuiles", "image": "/images/real-09-toiture-tuiles.jpg" },
-      { "titre": "Réalisation d'un bardage bois et pose de rives en zinc", "image": "/images/real-10-bardage-rives-zinc.jpg" },
-      { "titre": "Rénovation du toit en ardoises", "image": "/images/real-11-toit-ardoises.jpg" },
-      { "titre": "Toiture en ardoises, fenêtres de toit et souches de cheminée", "image": "/images/real-12-ardoises-fenetres-souches.jpg" },
-      { "titre": "Réalisation de la couverture de cette maison de potiers avec une petite tuile plate en panachage", "image": "/images/real-13-maison-potiers.jpg" }
+      {
+        "titre": "Réalisation d'un bardage bois",
+        "image": "/images/real-01-bardage-bois.jpg"
+      },
+      {
+        "titre": "Rénovation de la charpente et de la couverture de ce vieux moulin",
+        "image": "/images/real-02-vieux-moulin.jpg"
+      },
+      {
+        "titre": "Réfection de la couverture de cet ancien presbytère en tuiles mécaniques",
+        "image": "/images/real-03-presbytere.jpg"
+      },
+      {
+        "titre": "Rénovation de cette toiture en ardoises naturelles",
+        "image": "/images/real-04-ardoises-naturelles.jpg"
+      },
+      {
+        "titre": "Rénovation de la couverture de ce hangar",
+        "image": "/images/real-05-hangar.jpg"
+      },
+      {
+        "titre": "Toiture en petites tuiles de pays et pose de fenêtres de toit",
+        "image": "/images/real-06-tuiles-de-pays-fenetres.jpg"
+      },
+      {
+        "titre": "Rénovation de la charpente et de la couverture de cet ancien moulin",
+        "image": "/images/real-07-ancien-moulin.jpg"
+      },
+      {
+        "titre": "Rénovation de la couverture en tuiles plates de pays",
+        "image": "/images/real-08-tuiles-plates.jpg"
+      },
+      {
+        "titre": "Rénovation de la toiture en tuiles",
+        "image": "/images/real-09-toiture-tuiles.jpg"
+      },
+      {
+        "titre": "Réalisation d'un bardage bois et pose de rives en zinc",
+        "image": "/images/real-10-bardage-rives-zinc.jpg"
+      },
+      {
+        "titre": "Rénovation du toit en ardoises",
+        "image": "/images/real-11-toit-ardoises.jpg"
+      },
+      {
+        "titre": "Toiture en ardoises, fenêtres de toit et souches de cheminée",
+        "image": "/images/real-12-ardoises-fenetres-souches.jpg"
+      },
+      {
+        "titre": "Réalisation de la couverture de cette maison de potiers avec une petite tuile plate en panachage",
+        "image": "/images/real-13-maison-potiers.jpg"
+      }
     ]
   },
   "bandeau_2": "Précision • Durabilité • Authenticité • Esthétique",

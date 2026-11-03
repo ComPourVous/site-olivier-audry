@@ -90,7 +90,14 @@ h3 { font-size: 1.15rem; color: var(--orange); }
   background: linear-gradient(90deg, rgba(20,20,20,.72), rgba(20,20,20,.25)), var(--hero-image) center / cover no-repeat;
   color: var(--blanc);
 }
-.hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); max-width: 14ch; }
+.hero-surtitre {
+  font: 600 .85rem var(--texte); letter-spacing: .14em; text-transform: uppercase;
+  margin: 0 0 14px; opacity: .95;
+}
+.hero-titre {
+  font-family: var(--titre); font-weight: 600; line-height: 1.15;
+  font-size: clamp(2.4rem, 6vw, 4.2rem); max-width: 14ch; margin: 0 0 .6em;
+}
 .hero-sous-titre { font-size: 1rem; margin: 0 0 28px; opacity: .95; }
 
 /* Qui sommes-nous */
