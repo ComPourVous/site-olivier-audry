@@ -1,7 +1,7 @@
 """Fabrique le site (dossier site/) à partir de contenu/site.json et gabarit.html.
 
 Lancer : python3 build.py
-Netlify lance ce script tout seul à chaque modification faite depuis /admin.
+GitHub (fichier .github/workflows/site.yml) lance ce script tout seul à chaque modification faite depuis /admin.
 """
 import json
 import re
@@ -122,7 +122,7 @@ def construire():
     Email : <a href="mailto:{escape(contenu["contact"]["email"])}">{escape(contenu["contact"]["email"])}</a></p>
     <p>Responsable de la publication : {escape(responsable)}</p>
     <h2>Hébergement</h2>
-    <p>Netlify, Inc. – San Francisco, Californie, États-Unis – www.netlify.com</p>
+    <p>GitHub, Inc. – 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis – pages.github.com</p>
     <h2>Données personnelles</h2>
     <p>Les informations envoyées via le formulaire de contact servent uniquement à répondre à votre demande.
     Elles sont acheminées par e-mail via le service FormSubmit (formsubmit.co), puis ne sont ni revendues
