@@ -66,8 +66,6 @@ h3 { font-size: 1.15rem; color: var(--orange); }
 .menu a:not(.bouton) { color: var(--noir); text-decoration: none; font-size: .95rem; }
 .menu a:not(.bouton):hover { color: var(--orange); }
 .menu-bouton { display: none; }
-.menu a.menu-tel { font-weight: 700; white-space: nowrap; }
-
 @media (max-width: 1000px) {
   .menu-bouton {
     display: flex; flex-direction: column; gap: 5px;

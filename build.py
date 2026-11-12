@@ -157,7 +157,6 @@ def construire():
         "PRESTATIONS": prestations,
         "REALISATIONS": realisations,
         "TELEPHONE": telephone,
-        "TELEPHONE_MENU": f'\n      <a href="tel:{escape(tel.replace(" ", ""))}" class="menu-tel">{escape(tel)}</a>' if tel else "",
         "CARTE": escape(carte),
         "BANDEAU_1": bandeau(contenu["bandeau_1"]),
         "BANDEAU_2": bandeau(contenu["bandeau_2"]),
