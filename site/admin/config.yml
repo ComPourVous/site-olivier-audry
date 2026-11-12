@@ -88,6 +88,14 @@ collections:
                       - { label: Calendrier, value: calendrier }
                       - { label: Gouttière, value: gouttiere }
 
+          - label: Zone d'intervention
+            name: zone
+            widget: object
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - { label: Texte, name: texte, widget: text }
+              - { label: "Communes (une par ligne, important pour Google)", name: communes, widget: list, field: { label: Commune, name: commune, widget: string } }
+
           - label: Réalisations
             name: realisations
             widget: object

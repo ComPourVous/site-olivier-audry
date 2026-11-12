@@ -66,6 +66,7 @@ h3 { font-size: 1.15rem; color: var(--orange); }
 .menu a:not(.bouton) { color: var(--noir); text-decoration: none; font-size: .95rem; }
 .menu a:not(.bouton):hover { color: var(--orange); }
 .menu-bouton { display: none; }
+.menu a.menu-tel { font-weight: 700; white-space: nowrap; }
 
 @media (max-width: 760px) {
   .menu-bouton {
@@ -164,6 +165,23 @@ h3 { font-size: 1.15rem; color: var(--orange); }
 
 @media (max-width: 760px) {
   .prestations-grille { grid-template-columns: 1fr; }
+}
+
+/* Zone d'intervention */
+.zone { text-align: center; }
+.zone-texte { color: var(--gris); margin-bottom: 28px; }
+.carte {
+  height: clamp(320px, 50vw, 440px); margin-bottom: 28px;
+  border: 1px solid var(--beige-fonce); z-index: 0;
+}
+.carte .leaflet-tooltip { font: 600 .85rem var(--texte); }
+.zone-communes {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+}
+.zone-communes li {
+  border: 1px solid var(--orange); color: var(--noir);
+  padding: 6px 14px; font-size: .95rem;
 }
 
 /* Réalisations */

@@ -1,7 +1,7 @@
 {
   "seo": {
     "titre": "Couvreur zingueur à Veaugues (18) – O. Audry",
-    "description": "O. Audry, couvreur-zingueur à Veaugues (Cher) depuis plus de 10 ans : couverture neuve et rénovation, zinguerie, réparation et entretien de toiture. Devis gratuit."
+    "description": "O. Audry, couvreur-zingueur à Veaugues (Cher) : couverture neuve et rénovation, zinguerie, réparation de toiture dans le Sancerrois, jusqu'à La Borne et Les Aix-d'Angillon. Devis gratuit."
   },
   "accueil": {
     "surtitre": "Couvreur-zingueur à Veaugues, dans le Cher",
@@ -91,6 +91,30 @@
         "texte": "Pose et remplacement pour évacuation efficace",
         "icone": "gouttiere"
       }
+    ]
+  },
+  "zone": {
+    "titre": "Notre zone d'intervention",
+    "texte": "Basés à Veaugues, nous intervenons dans tout le Sancerrois et jusqu'à La Borne et Les Aix-d'Angillon, pour les particuliers comme pour les professionnels.",
+    "communes": [
+      "Veaugues",
+      "Sancerre",
+      "Saint-Satur",
+      "Ménétréol-sous-Sancerre",
+      "Bué",
+      "Crézancy-en-Sancerre",
+      "Vinon",
+      "Thauvenay",
+      "Sury-en-Vaux",
+      "Verdigny",
+      "Montigny",
+      "Humbligny",
+      "Neuvy-Deux-Clochers",
+      "Henrichemont",
+      "La Borne",
+      "Morogues",
+      "Parassy",
+      "Les Aix-d'Angillon"
     ]
   },
   "realisations": {

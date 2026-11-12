@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v={{VERSION}}">
 </head>
 <body>
 
@@ -34,7 +34,8 @@
     <nav id="menu" class="menu">
       <a href="#accueil">Accueil</a>
       <a href="#realisations">Nos réalisations</a>
-      <a href="#contact">Contact</a>
+      <a href="#zone">Zone d'intervention</a>
+      <a href="#contact">Contact</a>{{TELEPHONE_MENU}}
       <a href="#contact" class="bouton bouton-contour">Devis</a>
     </nav>
   </div>
@@ -98,6 +99,17 @@
     </div>
   </section>
 
+  <section id="zone" class="section zone">
+    <div class="conteneur conteneur-etroit">
+      <h2>{{zone.titre}}</h2>
+      <p class="zone-texte">{{zone.texte}}</p>
+      <div id="carte" class="carte" data-carte="{{CARTE}}" role="region" aria-label="Carte de la zone d'intervention"></div>
+      <ul class="zone-communes">
+        {{COMMUNES}}
+      </ul>
+    </div>
+  </section>
+
   <section id="realisations" class="section realisations">
     <div class="conteneur">
       <h2>{{realisations.titre}}</h2>
@@ -149,6 +161,8 @@
   </div>
 </footer>
 
-<script src="/js/main.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="/js/main.js?v={{VERSION}}"></script>
 </body>
 </html>
