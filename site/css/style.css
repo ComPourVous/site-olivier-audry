@@ -68,7 +68,7 @@ h3 { font-size: 1.15rem; color: var(--orange); }
 .menu-bouton { display: none; }
 .menu a.menu-tel { font-weight: 700; white-space: nowrap; }
 
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
   .menu-bouton {
     display: flex; flex-direction: column; gap: 5px;
     background: none; border: 0; padding: 10px; cursor: pointer;
