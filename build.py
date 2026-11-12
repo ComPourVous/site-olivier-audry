@@ -9,7 +9,6 @@ import re
 from datetime import date
 from html import escape
 from pathlib import Path
-from urllib.request import urlopen
 
 RACINE = Path(__file__).parent
 SORTIE = RACINE / "site"
@@ -84,47 +83,6 @@ def page_simple(contenu, titre, corps):
 """
 
 
-def coordonnees_communes(communes):
-    """Position de chaque commune pour la carte. Les communes ajoutées depuis /admin
-    sont cherchées dans le Cher sur geo.api.gouv.fr ; si l'API ne répond pas, la commune
-    reste dans la liste mais n'apparaît pas sur la carte."""
-    fichier = RACINE / "contenu" / "coordonnees.json"
-    connues = json.loads(fichier.read_text(encoding="utf-8"))
-    manquantes = [c for c in communes if c not in connues]
-    if manquantes:
-        try:
-            with urlopen("https://geo.api.gouv.fr/departements/18/communes?fields=nom,centre", timeout=20) as r:
-                cher = {x["nom"].lower(): x["centre"]["coordinates"] for x in json.load(r)}
-            for c in manquantes:
-                if c.lower() in cher:
-                    lon, lat = cher[c.lower()]
-                    connues[c] = [lat, lon]
-        except (OSError, ValueError, KeyError) as e:
-            print("Coordonnées non trouvées pour", manquantes, ":", e)
-    return [{"nom": c, "lat": connues[c][0], "lon": connues[c][1]} for c in communes if c in connues]
-
-
-def contour(points):
-    """Enveloppe convexe (lat, lon) pour dessiner la zone sur la carte."""
-    pts = sorted(set(points))
-    if len(pts) < 3:
-        return pts
-
-    def cote(o, a, b):
-        return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
-
-    bas, haut = [], []
-    for p in pts:
-        while len(bas) >= 2 and cote(bas[-2], bas[-1], p) <= 0:
-            bas.pop()
-        bas.append(p)
-    for p in reversed(pts):
-        while len(haut) >= 2 and cote(haut[-2], haut[-1], p) <= 0:
-            haut.pop()
-        haut.append(p)
-    return bas[:-1] + haut[:-1]
-
-
 def version_fichiers():
     """Empreinte du CSS et du JS : force les navigateurs à recharger après une modification."""
     h = hashlib.sha1()
@@ -158,7 +116,12 @@ def donnees_structurees(contenu):
             "addressRegion": "Centre-Val de Loire",
             "addressCountry": "FR",
         },
-        "areaServed": [{"@type": "City", "name": c} for c in contenu["zone"]["communes"] if c.strip()],
+        "areaServed": [{
+            "@type": "GeoCircle",
+            "geoMidpoint": {"@type": "GeoCoordinates", "latitude": contenu["zone"]["centre"][0],
+                            "longitude": contenu["zone"]["centre"][1]},
+            "geoRadius": int(float(contenu["zone"]["rayon_km"]) * 1000),
+        }] + [{"@type": "City", "name": c} for c in contenu["zone"]["communes"] if c.strip()],
         "makesOffer": [
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": p["titre"], "description": p["texte"]}}
             for p in contenu["prestations"]["liste"]
@@ -183,15 +146,10 @@ def construire():
         f'<figcaption>{escape(r["titre"])}</figcaption></figure></li>'
         for r in contenu["realisations"]["liste"]
     )
-    communes = [c.strip() for c in contenu["zone"]["communes"] if c.strip()]
-    points = coordonnees_communes(communes)
-    carte = json.dumps({
-        "communes": points,
-        "contour": contour([(p["lat"], p["lon"]) for p in points]),
-        "base": communes[0] if communes else "",
-    }, ensure_ascii=False)
+    z = contenu["zone"]
+    carte = json.dumps({"centre": z["centre"], "rayon_km": float(z["rayon_km"]), "nom": z["nom_centre"]}, ensure_ascii=False)
     tel = contenu["contact"].get("telephone", "").strip()
-    telephone =f' · <a href="tel:{escape(tel.replace(" ", ""))}">{escape(tel)}</a>' if tel else ""
+    telephone = f' · <a href="tel:{escape(tel.replace(" ", ""))}">{escape(tel)}</a>' if tel else ""
 
     index = remplir(gabarit, contenu, {
         "QUI_PARAGRAPHES": paragraphes(contenu["qui_sommes_nous"]["paragraphes"]),
@@ -200,7 +158,6 @@ def construire():
         "REALISATIONS": realisations,
         "TELEPHONE": telephone,
         "TELEPHONE_MENU": f'\n      <a href="tel:{escape(tel.replace(" ", ""))}" class="menu-tel">{escape(tel)}</a>' if tel else "",
-        "COMMUNES": "\n        ".join(f"<li>{escape(c)}</li>" for c in communes),
         "CARTE": escape(carte),
         "BANDEAU_1": bandeau(contenu["bandeau_1"]),
         "BANDEAU_2": bandeau(contenu["bandeau_2"]),

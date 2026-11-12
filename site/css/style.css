@@ -171,18 +171,10 @@ h3 { font-size: 1.15rem; color: var(--orange); }
 .zone { text-align: center; }
 .zone-texte { color: var(--gris); margin-bottom: 28px; }
 .carte {
-  height: clamp(320px, 50vw, 440px); margin-bottom: 28px;
+  height: clamp(320px, 50vw, 440px);
   border: 1px solid var(--beige-fonce); z-index: 0;
 }
 .carte .leaflet-tooltip { font: 600 .85rem var(--texte); }
-.zone-communes {
-  list-style: none; margin: 0; padding: 0;
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
-}
-.zone-communes li {
-  border: 1px solid var(--orange); color: var(--noir);
-  padding: 6px 14px; font-size: .95rem;
-}
 
 /* Réalisations */
 .realisations h2 { text-align: center; }

@@ -95,7 +95,13 @@
   },
   "zone": {
     "titre": "Notre zone d'intervention",
-    "texte": "Basés à Veaugues, nous intervenons dans tout le Sancerrois et jusqu'à La Borne et Les Aix-d'Angillon, pour les particuliers comme pour les professionnels.",
+    "texte": "Basés à Veaugues, nous intervenons dans un rayon d'environ 20 km : tout le Sancerrois et jusqu'à La Borne et Les Aix-d'Angillon, pour les particuliers comme pour les professionnels.",
+    "nom_centre": "Veaugues",
+    "centre": [
+      47.2662,
+      2.7535
+    ],
+    "rayon_km": 20,
     "communes": [
       "Veaugues",
       "Sancerre",

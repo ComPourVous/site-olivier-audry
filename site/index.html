@@ -39,6 +39,15 @@
   },
   "areaServed": [
     {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.2662,
+        "longitude": 2.7535
+      },
+      "geoRadius": 20000
+    },
+    {
       "@type": "City",
       "name": "Veaugues"
     },
@@ -197,7 +206,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=ba66d6e0">
+  <link rel="stylesheet" href="/css/style.css?v=d779b9ad">
 </head>
 <body>
 
@@ -292,28 +301,8 @@
   <section id="zone" class="section zone">
     <div class="conteneur conteneur-etroit">
       <h2>Notre zone d&#x27;intervention</h2>
-      <p class="zone-texte">Basés à Veaugues, nous intervenons dans tout le Sancerrois et jusqu&#x27;à La Borne et Les Aix-d&#x27;Angillon, pour les particuliers comme pour les professionnels.</p>
-      <div id="carte" class="carte" data-carte="{&quot;communes&quot;: [{&quot;nom&quot;: &quot;Veaugues&quot;, &quot;lat&quot;: 47.2662, &quot;lon&quot;: 2.7535}, {&quot;nom&quot;: &quot;Sancerre&quot;, &quot;lat&quot;: 47.3248, &quot;lon&quot;: 2.822}, {&quot;nom&quot;: &quot;Saint-Satur&quot;, &quot;lat&quot;: 47.3491, &quot;lon&quot;: 2.8559}, {&quot;nom&quot;: &quot;Ménétréol-sous-Sancerre&quot;, &quot;lat&quot;: 47.3194, &quot;lon&quot;: 2.8702}, {&quot;nom&quot;: &quot;Bué&quot;, &quot;lat&quot;: 47.3082, &quot;lon&quot;: 2.7938}, {&quot;nom&quot;: &quot;Crézancy-en-Sancerre&quot;, &quot;lat&quot;: 47.3043, &quot;lon&quot;: 2.7462}, {&quot;nom&quot;: &quot;Vinon&quot;, &quot;lat&quot;: 47.2788, &quot;lon&quot;: 2.8331}, {&quot;nom&quot;: &quot;Thauvenay&quot;, &quot;lat&quot;: 47.2982, &quot;lon&quot;: 2.8785}, {&quot;nom&quot;: &quot;Sury-en-Vaux&quot;, &quot;lat&quot;: 47.3713, &quot;lon&quot;: 2.797}, {&quot;nom&quot;: &quot;Verdigny&quot;, &quot;lat&quot;: 47.3493, &quot;lon&quot;: 2.8089}, {&quot;nom&quot;: &quot;Montigny&quot;, &quot;lat&quot;: 47.231, &quot;lon&quot;: 2.6871}, {&quot;nom&quot;: &quot;Humbligny&quot;, &quot;lat&quot;: 47.2637, &quot;lon&quot;: 2.6457}, {&quot;nom&quot;: &quot;Neuvy-Deux-Clochers&quot;, &quot;lat&quot;: 47.2813, &quot;lon&quot;: 2.6721}, {&quot;nom&quot;: &quot;Henrichemont&quot;, &quot;lat&quot;: 47.3, &quot;lon&quot;: 2.5376}, {&quot;nom&quot;: &quot;La Borne&quot;, &quot;lat&quot;: 47.286, &quot;lon&quot;: 2.579}, {&quot;nom&quot;: &quot;Morogues&quot;, &quot;lat&quot;: 47.255, &quot;lon&quot;: 2.5953}, {&quot;nom&quot;: &quot;Parassy&quot;, &quot;lat&quot;: 47.2399, &quot;lon&quot;: 2.539}, {&quot;nom&quot;: &quot;Les Aix-d&#x27;Angillon&quot;, &quot;lat&quot;: 47.193, &quot;lon&quot;: 2.5625}], &quot;contour&quot;: [[47.193, 2.5625], [47.2399, 2.539], [47.3, 2.5376], [47.3713, 2.797], [47.3491, 2.8559], [47.3194, 2.8702], [47.2982, 2.8785], [47.2788, 2.8331], [47.231, 2.6871]], &quot;base&quot;: &quot;Veaugues&quot;}" role="region" aria-label="Carte de la zone d'intervention"></div>
-      <ul class="zone-communes">
-        <li>Veaugues</li>
-        <li>Sancerre</li>
-        <li>Saint-Satur</li>
-        <li>Ménétréol-sous-Sancerre</li>
-        <li>Bué</li>
-        <li>Crézancy-en-Sancerre</li>
-        <li>Vinon</li>
-        <li>Thauvenay</li>
-        <li>Sury-en-Vaux</li>
-        <li>Verdigny</li>
-        <li>Montigny</li>
-        <li>Humbligny</li>
-        <li>Neuvy-Deux-Clochers</li>
-        <li>Henrichemont</li>
-        <li>La Borne</li>
-        <li>Morogues</li>
-        <li>Parassy</li>
-        <li>Les Aix-d&#x27;Angillon</li>
-      </ul>
+      <p class="zone-texte">Basés à Veaugues, nous intervenons dans un rayon d&#x27;environ 20 km : tout le Sancerrois et jusqu&#x27;à La Borne et Les Aix-d&#x27;Angillon, pour les particuliers comme pour les professionnels.</p>
+      <div id="carte" class="carte" data-carte="{&quot;centre&quot;: [47.2662, 2.7535], &quot;rayon_km&quot;: 20.0, &quot;nom&quot;: &quot;Veaugues&quot;}" role="region" aria-label="Carte de la zone d'intervention"></div>
     </div>
   </section>
 
@@ -382,6 +371,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="/js/main.js?v=ba66d6e0"></script>
+<script src="/js/main.js?v=d779b9ad"></script>
 </body>
 </html>
