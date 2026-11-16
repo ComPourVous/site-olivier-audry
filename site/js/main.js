@@ -13,8 +13,36 @@ menu.querySelectorAll("a").forEach((lien) =>
 );
 
 // Carte de la zone d'intervention (OpenStreetMap)
+// Leaflet n'est chargé qu'à l'approche de la carte, pour alléger l'ouverture de la page.
 const blocCarte = document.getElementById("carte");
-if (blocCarte && window.L) {
+const LEAFLET = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min";
+
+function chargerLeaflet() {
+  const css = document.createElement("link");
+  css.rel = "stylesheet";
+  css.href = `${LEAFLET}.css`;
+  document.head.append(css);
+  const script = document.createElement("script");
+  script.src = `${LEAFLET}.js`;
+  script.onload = afficherCarte;
+  document.body.append(script);
+}
+
+if (blocCarte) {
+  if ("IntersectionObserver" in window) {
+    const guetteur = new IntersectionObserver((entrees) => {
+      if (entrees.some((e) => e.isIntersecting)) {
+        guetteur.disconnect();
+        chargerLeaflet();
+      }
+    }, { rootMargin: "400px" });
+    guetteur.observe(blocCarte);
+  } else {
+    chargerLeaflet();
+  }
+}
+
+function afficherCarte() {
   const { centre, rayon_km, nom } = JSON.parse(blocCarte.dataset.carte);
   const carte = L.map(blocCarte, { scrollWheelZoom: false, zoomSnap: 0.25 }).setView(centre, 10);
   carte.attributionControl.setPrefix(false);
@@ -38,7 +66,7 @@ if (blocCarte && window.L) {
   carte.on("mouseout", () => carte.scrollWheelZoom.disable());
 }
 
-// Flèches du carrousel des réalisations
+// Flèches du carrousel des réalisations (page d'accueil seulement)
 const piste = document.querySelector(".carrousel-piste");
 document.querySelectorAll(".carrousel-fleche").forEach((fleche) =>
   fleche.addEventListener("click", () => {

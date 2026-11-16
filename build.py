@@ -91,6 +91,52 @@ def version_fichiers():
     return h.hexdigest()[:8]
 
 
+def taille_jpeg(chemin):
+    """Largeur et hauteur d'une photo JPEG (pour éviter que la page « saute » au chargement)."""
+    try:
+        with open(SORTIE / chemin.lstrip("/"), "rb") as f:
+            data = f.read()
+    except OSError:
+        return None
+    i = 2
+    while i < len(data) - 9:
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        marqueur = data[i + 1]
+        if marqueur in (0xC0, 0xC1, 0xC2):
+            return int.from_bytes(data[i + 7:i + 9], "big"), int.from_bytes(data[i + 5:i + 7], "big")
+        i += 2 + int.from_bytes(data[i + 2:i + 4], "big")
+    return None
+
+
+def attributs_taille(chemin):
+    t = taille_jpeg(chemin)
+    return f' width="{t[0]}" height="{t[1]}"' if t else ""
+
+
+def faq_html(liste):
+    return "\n      ".join(
+        f'<details class="faq-item"><summary>{escape(q["question"])}</summary><p>{escape(q["reponse"])}</p></details>'
+        for q in liste
+    )
+
+
+def faq_schema(liste):
+    return {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q["question"],
+             "acceptedAnswer": {"@type": "Answer", "text": q["reponse"]}}
+            for q in liste
+        ],
+    }
+
+
+def json_ld(donnees):
+    return json.dumps(donnees, ensure_ascii=False, indent=2).replace("</", "<\\/")
+
+
 def donnees_structurees(contenu):
     """Fiche entreprise lisible par Google (schema.org) : nom, adresse, prestations..."""
     s = contenu["societe"]
@@ -130,7 +176,55 @@ def donnees_structurees(contenu):
     tel = contenu["contact"].get("telephone", "").strip()
     if tel:
         fiche["telephone"] = tel
-    return json.dumps(fiche, ensure_ascii=False, indent=2).replace("</", "<\\/")
+    fiche["geo"] = {"@type": "GeoCoordinates", "latitude": contenu["zone"]["centre"][0],
+                    "longitude": contenu["zone"]["centre"][1]}
+    del fiche["@context"]
+    return json_ld({"@context": "https://schema.org", "@graph": [fiche, faq_schema(contenu["faq"]["liste"])]})
+
+
+def pages_ville(contenu, v, prestations):
+    """Page « Couvreur à <ville> » : texte propre à la ville, prestations, photos, FAQ. Renvoie son adresse."""
+    gabarit = (RACINE / "gabarit-ville.html").read_text(encoding="utf-8")
+    url_page = f"{URL}/{v['slug']}/"
+    tel = contenu["contact"].get("telephone", "").strip()
+    entreprise = {"@id": URL + "/#entreprise"}
+    schema = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Service", "name": f"Couvreur à {v['ville']}", "serviceType": "Couverture et zinguerie",
+         "url": url_page, "provider": entreprise, "areaServed": {"@type": "City", "name": v["ville"]},
+         "description": v["description_seo"]},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Accueil", "item": URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": v["h1"], "item": url_page}]},
+        faq_schema(v["faq"]),
+    ]}
+    titres = {r["image"]: r["titre"] for r in contenu["realisations"]["liste"]}
+    photos = "\n        ".join(
+        f'<li><figure><img src="{escape(ph)}" alt="{escape(titres.get(ph, "Toiture réalisée par O. Audry"))}"'
+        f'{attributs_taille(ph)} loading="lazy"><figcaption>{escape(titres.get(ph, ""))}</figcaption></figure></li>'
+        for ph in v["photos"])
+    html = remplir(gabarit, contenu, {
+        "TITRE_SEO": escape(v["titre_seo"]),
+        "DESCRIPTION_SEO": escape(v["description_seo"]),
+        "URL_PAGE": url_page,
+        "IMAGE": escape(v["photos"][0] if v["photos"] else contenu["accueil"]["image"]),
+        "H1": escape(v["h1"]),
+        "SOUS_TITRE": escape(v["sous_titre"]),
+        "VILLE": escape(v["ville"]),
+        "PARAGRAPHES": paragraphes(v["paragraphes"]),
+        "PRESTATIONS": prestations,
+        "PHOTOS": photos,
+        "FAQ": faq_html(v["faq"]),
+        "BOUTON_TEL": (f'<a href="tel:{escape(tel.replace(" ", ""))}" class="bouton">Appeler le {escape(tel)}</a>'
+                       if tel else ""),
+        "ANNEE": escape(contenu["societe"]["annee"]),
+        "DONNEES_STRUCTUREES": json_ld(schema),
+        "URL": URL,
+        "VERSION": version_fichiers(),
+    })
+    dossier = SORTIE / v["slug"]
+    dossier.mkdir(exist_ok=True)
+    (dossier / "index.html").write_text(html, encoding="utf-8")
+    return url_page
 
 
 def construire():
@@ -142,7 +236,7 @@ def construire():
         for p in contenu["prestations"]["liste"]
     )
     realisations = "\n          ".join(
-        f'<li><figure tabindex="0"><img src="{escape(r["image"])}" alt="{escape(r["titre"])}" loading="lazy">'
+        f'<li><figure tabindex="0"><img src="{escape(r["image"])}" alt="{escape(r["titre"])}"{attributs_taille(r["image"])} loading="lazy">'
         f'<figcaption>{escape(r["titre"])}</figcaption></figure></li>'
         for r in contenu["realisations"]["liste"]
     )
@@ -158,6 +252,12 @@ def construire():
         "REALISATIONS": realisations,
         "TELEPHONE": telephone,
         "CARTE": escape(carte),
+        "FAQ": faq_html(contenu["faq"]["liste"]),
+        "TAILLE_QUI_1": attributs_taille(contenu["qui_sommes_nous"]["image_1"]),
+        "TAILLE_QUI_2": attributs_taille(contenu["qui_sommes_nous"]["image_2"]),
+        "TAILLE_ENTREPRISE": attributs_taille(contenu["entreprise"]["image"]),
+        "PAGES_VILLES": "".join(
+            f'<a href="/{escape(v["slug"])}/">Couvreur à {escape(v["ville"])}</a>' for v in contenu.get("pages_villes", [])),
         "BANDEAU_1": bandeau(contenu["bandeau_1"]),
         "BANDEAU_2": bandeau(contenu["bandeau_2"]),
         "DONNEES_STRUCTUREES": donnees_structurees(contenu),
@@ -168,11 +268,12 @@ def construire():
 
     (SORTIE / "robots.txt").write_text(
         f"User-agent: *\nDisallow: /admin/\n\nSitemap: {URL}/sitemap.xml\n", encoding="utf-8")
-    (SORTIE / "sitemap.xml").write_text(f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>{URL}/</loc><lastmod>{date.today().isoformat()}</lastmod></url>
-</urlset>
-""", encoding="utf-8")
+    villes = [pages_ville(contenu, v, prestations) for v in contenu.get("pages_villes", [])]
+    urls = [URL + "/"] + villes
+    (SORTIE / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"  <url><loc>{u}</loc><lastmod>{date.today().isoformat()}</lastmod></url>\n" for u in urls)
+        + "</urlset>\n", encoding="utf-8")
 
     (SORTIE / "merci.html").write_text(page_simple(
         contenu, "Message envoyé",

@@ -1,7 +1,7 @@
 {
   "seo": {
-    "titre": "Couvreur zingueur à Veaugues (18) – O. Audry",
-    "description": "O. Audry, couvreur-zingueur à Veaugues (Cher) : couverture neuve et rénovation, zinguerie, réparation de toiture dans le Sancerrois, jusqu'à La Borne et Les Aix-d'Angillon. Devis gratuit."
+    "titre": "Couvreur zingueur à Veaugues et Sancerre (18) | O. Audry",
+    "description": "Couvreur-zingueur à Veaugues depuis plus de 10 ans : ardoises, tuiles, zinguerie, réparation de fuites dans le Sancerrois. Devis gratuit : 07 71 12 92 27."
   },
   "accueil": {
     "surtitre": "Couvreur-zingueur à Veaugues, dans le Cher",
@@ -12,7 +12,7 @@
     "image": "/images/hero-maison.jpg"
   },
   "qui_sommes_nous": {
-    "titre": "Qui sommes-nous ?",
+    "titre": "Votre couvreur-zingueur à Veaugues",
     "paragraphes": [
       "La SAS O. AUDRY est une entreprise spécialisée dans les travaux de couverture et de zinguerie, installée à Veaugues depuis plus de 10 ans.",
       "Forts de notre expérience et de notre savoir-faire, nous intervenons aussi bien sur des constructions neuves que sur des projets de rénovation ou de réparation.",
@@ -39,62 +39,62 @@
     "engagement_texte": "Réaliser un travail sérieux, soigné et durable, dans le respect du bâtiment et des attentes de nos clients."
   },
   "prestations": {
-    "titre": "Nos prestations",
+    "titre": "Nos prestations de couverture et zinguerie",
     "liste": [
       {
         "titre": "Couverture neuve et rénovation",
-        "texte": "Pose et remise à neuf de toitures, ardoises et tuiles",
+        "texte": "Pose et remise à neuf de toitures en ardoises et en tuiles, traditionnelles ou contemporaines",
         "icone": "maison"
       },
       {
         "titre": "Réparation et entretien",
-        "texte": "Interventions ciblées pour prolonger la durée de vie de votre toit",
+        "texte": "Interventions ciblées pour préserver l'étanchéité et prolonger la durée de vie de votre toit",
         "icone": "outils"
       },
       {
         "titre": "Travaux de zinguerie",
-        "texte": "Chéneaux, noues, habillages sur mesure en zinc",
+        "texte": "Conception sur mesure : chéneaux, noues, arêtiers et habillages protecteurs en zinc",
         "icone": "cle"
       },
       {
         "titre": "Rénovation de toitures anciennes",
-        "texte": "Restauration respectueuse du bâti d'origine",
+        "texte": "Restauration respectueuse du cachet et de l'architecture du bâti d'origine",
         "icone": "ancien"
       },
       {
         "titre": "Recherche de fuites et étanchéité",
-        "texte": "Diagnostic précis et réparation des infiltrations",
+        "texte": "Diagnostic précis des infiltrations et reprise rapide pour mettre votre habitation hors d'eau",
         "icone": "goutte"
       },
       {
         "titre": "Pose de fenêtres de toit",
-        "texte": "Installation et remplacement pour plus de lumière",
+        "texte": "Installation et remplacement de fenêtres de toit pour plus de lumière naturelle",
         "icone": "fenetre"
       },
       {
         "titre": "Travaux d'isolation",
-        "texte": "Isolation sous toiture pour le confort thermique",
+        "texte": "Isolation sous toiture pour garantir le confort thermique, été comme hiver",
         "icone": "isolation"
       },
       {
         "titre": "Démoussage et nettoyage",
-        "texte": "Entretien de la couverture contre mousse et lichens",
+        "texte": "Traitement et entretien de la couverture contre les mousses, lichens et dépôts",
         "icone": "nettoyage"
       },
       {
         "titre": "Révision annuelle",
-        "texte": "Contrôle préventif de l'état général de la toiture",
+        "texte": "Contrôle préventif de l'état général de la toiture et de l'évacuation des eaux pluviales",
         "icone": "calendrier"
       },
       {
         "titre": "Gouttières",
-        "texte": "Pose et remplacement pour évacuation efficace",
+        "texte": "Pose, ajustement et remplacement de gouttières et descentes pour une évacuation durable",
         "icone": "gouttiere"
       }
     ]
   },
   "zone": {
-    "titre": "Notre zone d'intervention",
+    "titre": "Couvreur dans le Sancerrois : notre zone d'intervention",
     "texte": "Basés à Veaugues, nous intervenons dans un rayon d'environ 20 km : tout le Sancerrois et jusqu'à La Borne et Les Aix-d'Angillon, pour les particuliers comme pour les professionnels.",
     "nom_centre": "Veaugues",
     "centre": [
@@ -124,7 +124,7 @@
     ]
   },
   "realisations": {
-    "titre": "Quelques réalisations",
+    "titre": "Nos réalisations de toitures dans le Cher",
     "liste": [
       {
         "titre": "Réalisation d'un bardage bois",
@@ -180,6 +180,31 @@
       }
     ]
   },
+  "faq": {
+    "titre": "Questions fréquentes",
+    "liste": [
+      {
+        "question": "Le devis est-il gratuit ?",
+        "reponse": "Oui. Nous étudions gratuitement votre projet et vous remettons un devis sans engagement, en neuf comme en rénovation."
+      },
+      {
+        "question": "Dans quel secteur intervenez-vous ?",
+        "reponse": "Nous sommes installés à Veaugues et intervenons dans un rayon d'environ 20 km : Sancerre, Saint-Satur, le Sancerrois, jusqu'à Henrichemont, La Borne et Les Aix-d'Angillon."
+      },
+      {
+        "question": "Sur quels types de toitures travaillez-vous ?",
+        "reponse": "Ardoises naturelles, tuiles plates de pays, petites tuiles, tuiles mécaniques et zinc : nous intervenons sur les maisons, les bâtiments anciens, les granges et les hangars."
+      },
+      {
+        "question": "Intervenez-vous pour une fuite ou une réparation ?",
+        "reponse": "Oui. Nous recherchons l'origine des infiltrations et réparons votre couverture : tuiles ou ardoises cassées, zinguerie, gouttières, abords de cheminée."
+      },
+      {
+        "question": "Travaillez-vous pour les particuliers et les professionnels ?",
+        "reponse": "Oui, nous accompagnons aussi bien les particuliers que les professionnels, de l'étude du projet jusqu'à la fin du chantier."
+      }
+    ]
+  },
   "bandeau_2": "Précision • Durabilité • Authenticité • Esthétique",
   "contact": {
     "titre": "Un projet pour nous ?",
@@ -195,5 +220,41 @@
     "tva": "FR35808145064",
     "responsable_publication": "",
     "annee": "2026"
-  }
+  },
+  "pages_villes": [
+    {
+      "slug": "couvreur-sancerre",
+      "ville": "Sancerre",
+      "titre_seo": "Couvreur à Sancerre (18300) – couverture et zinguerie | O. Audry",
+      "description_seo": "Couvreur-zingueur à 8 km de Sancerre : rénovation de toiture, ardoises et tuiles plates, zinguerie, réparation de fuites. Devis gratuit : 07 71 12 92 27.",
+      "h1": "Couvreur à Sancerre et dans le Sancerrois",
+      "sous_titre": "Couverture, zinguerie, réparation et rénovation de toitures, à 8 km de Sancerre.",
+      "paragraphes": [
+        "Installée à Veaugues, à environ 8 km de Sancerre, la SAS O. AUDRY intervient depuis plus de 10 ans sur les toitures de Sancerre et des communes voisines : Saint-Satur, Ménétréol-sous-Sancerre, Bué, Verdigny, Sury-en-Vaux, Crézancy-en-Sancerre, Thauvenay et Vinon.",
+        "Maisons de bourg, maisons de vignerons, granges, hangars ou constructions neuves : nous réalisons la couverture neuve, la rénovation complète ou la simple réparation de votre toit, en ardoises naturelles, en tuiles plates de pays, en petites tuiles ou en tuiles mécaniques.",
+        "Les toitures anciennes du Sancerrois demandent un savoir-faire particulier. Nous restaurons votre couverture dans le respect du cachet du bâti d'origine : lucarnes, souches de cheminée, rives et zinguerie sur mesure.",
+        "Une fuite, des tuiles déplacées après un coup de vent, une gouttière qui déborde ? Nous intervenons rapidement autour de Sancerre pour diagnostiquer l'origine du problème et remettre votre toiture hors d'eau."
+      ],
+      "photos": [
+        "/images/real-04-ardoises-naturelles.jpg",
+        "/images/real-08-tuiles-plates.jpg",
+        "/images/real-12-ardoises-fenetres-souches.jpg",
+        "/images/real-06-tuiles-de-pays-fenetres.jpg"
+      ],
+      "faq": [
+        {
+          "question": "Intervenez-vous à Sancerre et à Saint-Satur ?",
+          "reponse": "Oui. Nous sommes installés à Veaugues, à environ 8 km de Sancerre, et intervenons à Sancerre, Saint-Satur et dans tout le Sancerrois."
+        },
+        {
+          "question": "Le devis est-il gratuit ?",
+          "reponse": "Oui, nous étudions gratuitement votre projet et vous remettons un devis sans engagement."
+        },
+        {
+          "question": "Réparez-vous les toitures en ardoises et en tuiles plates ?",
+          "reponse": "Oui, nous travaillons les ardoises naturelles, les tuiles plates de pays, les petites tuiles et les tuiles mécaniques, ainsi que toute la zinguerie."
+        }
+      ]
+    }
+  ]
 }

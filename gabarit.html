@@ -60,8 +60,8 @@
       </div>
       <a href="#contact" class="bouton">{{qui_sommes_nous.bouton}}</a>
       <div class="qui-photos">
-        <img src="{{qui_sommes_nous.image_1}}" alt="Toiture rénovée par O. Audry" loading="lazy">
-        <img src="{{qui_sommes_nous.image_2}}" alt="Couverture en tuiles réalisée par O. Audry" loading="lazy">
+        <img src="{{qui_sommes_nous.image_1}}"{{TAILLE_QUI_1}} alt="Toiture rénovée par O. Audry" loading="lazy">
+        <img src="{{qui_sommes_nous.image_2}}"{{TAILLE_QUI_2}} alt="Couverture en tuiles réalisée par O. Audry" loading="lazy">
       </div>
     </div>
   </section>
@@ -75,7 +75,7 @@
         {{ENTREPRISE_PARAGRAPHES}}
       </div>
       <div class="entreprise-visuel">
-        <img src="{{entreprise.image}}" alt="Charpente bois" loading="lazy">
+        <img src="{{entreprise.image}}"{{TAILLE_ENTREPRISE}} alt="Charpente bois et couverture réalisées par O. Audry" loading="lazy">
         <div class="chiffre">
           <strong>{{entreprise.chiffre}}</strong>
           <span>{{entreprise.chiffre_texte}}</span>
@@ -104,6 +104,7 @@
       <h2>{{zone.titre}}</h2>
       <p class="zone-texte">{{zone.texte}}</p>
       <div id="carte" class="carte" data-carte="{{CARTE}}" role="region" aria-label="Carte de la zone d'intervention"></div>
+      <p class="zone-villes">{{PAGES_VILLES}}</p>
     </div>
   </section>
 
@@ -117,6 +118,13 @@
         </ul>
         <button class="carrousel-fleche suivant" aria-label="Réalisation suivante">›</button>
       </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section faq">
+    <div class="conteneur conteneur-etroit">
+      <h2>{{faq.titre}}</h2>
+      {{FAQ}}
     </div>
   </section>
 
@@ -158,8 +166,6 @@
   </div>
 </footer>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="/js/main.js?v={{VERSION}}"></script>
 </body>
 </html>

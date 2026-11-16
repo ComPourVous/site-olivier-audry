@@ -112,6 +112,40 @@ collections:
                   - { label: Titre du chantier, name: titre, widget: string }
                   - { label: Photo, name: image, widget: image }
 
+          - label: Questions fréquentes
+            name: faq
+            widget: object
+            fields:
+              - { label: Titre, name: titre, widget: string }
+              - label: Questions
+                name: liste
+                widget: list
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: Question, name: question, widget: string }
+                  - { label: Réponse, name: reponse, widget: text }
+
+          - label: Pages « Couvreur à … » (une par ville)
+            name: pages_villes
+            widget: list
+            summary: "{{fields.ville}}"
+            fields:
+              - { label: "Adresse de la page (ex. couvreur-sancerre)", name: slug, widget: string }
+              - { label: Ville, name: ville, widget: string }
+              - { label: Titre de l'onglet (Google), name: titre_seo, widget: string }
+              - { label: Description pour Google, name: description_seo, widget: text }
+              - { label: Grand titre de la page, name: h1, widget: string }
+              - { label: Sous-titre, name: sous_titre, widget: string }
+              - { label: Paragraphes, name: paragraphes, widget: list, field: { label: Paragraphe, name: paragraphe, widget: text } }
+              - { label: Photos, name: photos, widget: list, field: { label: Photo, name: photo, widget: image } }
+              - label: Questions fréquentes
+                name: faq
+                widget: list
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: Question, name: question, widget: string }
+                  - { label: Réponse, name: reponse, widget: text }
+
           - { label: Bandeau orange (2), name: bandeau_2, widget: string }
 
           - label: Contact

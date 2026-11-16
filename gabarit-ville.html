@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITRE_SEO}}</title>
+  <meta name="description" content="{{DESCRIPTION_SEO}}">
+  <link rel="canonical" href="{{URL_PAGE}}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="O. Audry – Couverture Zinguerie">
+  <meta property="og:url" content="{{URL_PAGE}}">
+  <meta property="og:title" content="{{TITRE_SEO}}">
+  <meta property="og:description" content="{{DESCRIPTION_SEO}}">
+  <meta property="og:image" content="{{URL}}{{IMAGE}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#df5b15">
+  <link rel="icon" href="/images/logo.png">
+  <script type="application/ld+json">{{DONNEES_STRUCTUREES}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v={{VERSION}}">
+</head>
+<body>
+
+<header class="entete">
+  <div class="conteneur entete-inner">
+    <a href="/" class="logo"><img src="/images/logo.png" alt="O. Audry – Couverture Zinguerie" width="160" height="78"></a>
+    <button class="menu-bouton" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" class="menu">
+      <a href="/">Accueil</a>
+      <a href="/#realisations">Nos réalisations</a>
+      <a href="/#zone">Zone d'intervention</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="bouton bouton-contour">Devis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero-ville" style="--hero-image: url('{{IMAGE}}')">
+    <div class="conteneur hero-contenu">
+      <nav class="fil-ariane" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › {{H1}}</nav>
+      <h1 class="hero-titre">{{H1}}</h1>
+      <p class="hero-sous-titre">{{SOUS_TITRE}}</p>
+      <a href="#contact" class="bouton">Demander un devis gratuit</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="conteneur conteneur-etroit ville-texte">
+      <h2>Votre couvreur-zingueur près de {{VILLE}}</h2>
+      {{PARAGRAPHES}}
+    </div>
+  </section>
+
+  <section class="section prestations">
+    <div class="conteneur">
+      <h2>Nos travaux de toiture à {{VILLE}}</h2>
+      <ul class="prestations-grille">
+        {{PRESTATIONS}}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section realisations">
+    <div class="conteneur">
+      <h2>Quelques toitures réalisées dans le secteur</h2>
+      <ul class="ville-photos">
+        {{PHOTOS}}
+      </ul>
+      <p class="ville-lien"><a href="/#realisations">Voir toutes nos réalisations</a></p>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="conteneur conteneur-etroit">
+      <h2>Questions fréquentes</h2>
+      {{FAQ}}
+    </div>
+  </section>
+
+  <section id="contact" class="section contact contact-ville">
+    <div class="conteneur conteneur-etroit">
+      <h2>Un projet de toiture à {{VILLE}} ?</h2>
+      <p class="contact-intro">Appelez-nous ou écrivez-nous pour une étude gratuite de votre projet, en neuf comme en rénovation.</p>
+      <p class="contact-boutons">{{BOUTON_TEL}}<a href="/#contact" class="bouton bouton-contour">Écrire un message</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur pied-inner">
+    <p>© {{ANNEE}} O. Audry. Tous droits réservés.</p>
+    <a href="/mentions-legales.html">Mentions légales</a>
+  </div>
+</footer>
+
+<script src="/js/main.js?v={{VERSION}}"></script>
+</body>
+</html>
